@@ -17,7 +17,7 @@ class SecurityConfig {
             .csrf { it.disable() }
             .cors { it.disable() }
             .authorizeHttpRequests{ request ->
-                request.requestMatchers("/booking/**").permitAll()
+                request.requestMatchers("/booking/**").hasAnyAuthority("ROLE_USER")
                 request.anyRequest().authenticated()
             }
             .addFilterBefore(JwtRequestFilter(), UsernamePasswordAuthenticationFilter::class.java)

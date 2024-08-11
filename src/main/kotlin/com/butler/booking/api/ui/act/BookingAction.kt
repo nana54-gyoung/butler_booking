@@ -6,6 +6,7 @@ import com.butler.booking.api.ui.vo.ResVO
 import com.butler.booking.common.annotation.CurrentUser
 import com.butler.booking.common.exception.ButlerException
 import com.butler.booking.model.dto.MemberDTO
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -24,5 +25,8 @@ class BookingAction(
         } ?: ButlerException("B-001", "회원을 찾을 수 없습니다.")
       return bookingBiz.booking(bookingVO)
     }
+
+    @GetMapping("list")
+    fun list(@CurrentUser member : MemberDTO) = bookingBiz.list(member)
 
 }
