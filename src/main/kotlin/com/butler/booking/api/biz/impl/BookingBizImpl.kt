@@ -34,7 +34,7 @@ class BookingBizImpl(
 
     override fun list(memberDTO: MemberDTO): ResVO {
         return memberDTO.mbno?.let { mbno ->
-            bookingRepository.findByReservMbno(mbno)?.let { list ->
+            bookingRepository.findByMbno(mbno)?.let { list ->
                 ResVO(meta = ResMetaVO(200), data = list)
             } ?: ResVO(meta = ResMetaVO(200, "예약이 존재하지 않습니다."))
 

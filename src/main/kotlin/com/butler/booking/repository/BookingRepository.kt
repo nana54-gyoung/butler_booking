@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface BookingRepository : CrudRepository<BookingEntity, Int> {
-    fun findByReservMbno(mbno : Int) : List<BookingEntity>?
+    fun findByMbno(mbno : Int) : List<BookingEntity>?
 }
