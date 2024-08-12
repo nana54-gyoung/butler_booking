@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat
 import java.time.LocalDateTime
 
 data class BookingVO(
-    var agentMbno : Int? = null,
-    var reservMbno : Int? = null,
+    var mbno : Int? = null,
+    var bmno : Int? = null,
     var title : String? = null,
     var bookingRequest : String? = null,
     var price : Int? = null,

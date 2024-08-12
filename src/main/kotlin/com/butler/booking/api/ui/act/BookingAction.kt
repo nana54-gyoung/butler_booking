@@ -21,7 +21,7 @@ class BookingAction(
     fun booking(@CurrentUser member : MemberDTO, @RequestBody bookingVO : BookingVO) : ResVO {
         println("booking request "+bookingVO.bookingRequest)
         member.mbno?.let {
-            bookingVO.reservMbno = it
+            bookingVO.mbno = it
         } ?: ButlerException("B-001", "회원을 찾을 수 없습니다.")
       return bookingBiz.booking(bookingVO)
     }

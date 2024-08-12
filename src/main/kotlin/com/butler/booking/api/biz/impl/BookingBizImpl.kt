@@ -18,8 +18,8 @@ class BookingBizImpl(
     override fun booking(bookingVO: BookingVO): ResVO {
         return try {
             val bookingRes = bookingRepository.save(BookingEntity().apply {
-                this.agentMbno = bookingVO.agentMbno
-                this.reservMbno = bookingVO.reservMbno
+                this.mbno = bookingVO.mbno
+                this.bmno = bookingVO.bmno
                 this.title = bookingVO.title
                 this.bookingRequest = bookingVO.bookingRequest
                 this.price = bookingVO.price
