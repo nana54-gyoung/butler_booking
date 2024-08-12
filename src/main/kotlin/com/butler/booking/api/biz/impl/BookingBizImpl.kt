@@ -25,6 +25,7 @@ class BookingBizImpl(
                 this.price = bookingVO.price
                 this.stdt = bookingVO.stdt
                 this.eddt = bookingVO.eddt
+                this.status = "SUCCESS"
             })
             ResVO(meta = ResMetaVO(200, "ok"), data = bookingRes)
         }catch (e : ButlerException) {

@@ -13,5 +13,6 @@ data class BookingEntity(@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var price : Int? = null
     var stdt : LocalDateTime? = LocalDateTime.now()
     var eddt : LocalDateTime? = LocalDateTime.now()
+    var status : String? = null
     var regdt : LocalDateTime? = LocalDateTime.now()
 }
